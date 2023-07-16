@@ -3,37 +3,29 @@
  * main - Entry point
  *
  * Return: Always 0 (Success)
- */
+*/
 int main(void)
 {
-	int i, j;
-	int a, b, c, d;
+	int num1, num2;
 
-	for (i = '0'; i <= 99; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		a = i / 10;
-		b = i % 10;
-		for (j = '0'; j <= 99; j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			c = j / 10;
-			d = j % 10l;
-	
-			if (a < c || (a == c && b < d))
-			 {
-				 putchar(a);
-				 putchar(b);
-				 putchar(',');
-				 putchar(c);
-				 putchar(d);
-				 
-				 if (a != '9' && b !='8')
-				 {
-					 putchar(',');
-					 putchar(' ');
-				 }
-			 }
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
