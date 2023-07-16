@@ -1,31 +1,39 @@
-#include <stdio.h>
+#include<stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
-*/
+ * main - Entry Point
+ * Description: Writing a program code that prints all possible
+ * different combinations of two digits
+ * Return: 0
+ */
+
 int main(void)
 {
-	int num1, num2;
+	int a = 0, b;
 
-	for (num1 = 0; num1 <= 98; num1++)
+	while (a <= 99)
 	{
-		for (num2 = num1 + 1; num2 <= 99; num2++)
+		b = a;
+		while (b <= 99)
 		{
-			putchar((num1 / 10) + '0');
-			putchar((num1 % 10) + '0');
-			putchar(' ');
-			putchar((num2 / 10) + '0');
-			putchar((num2 % 10) + '0');
+			if (b != a)
+			{
+				putchar((a / 10) + 48);
+				putchar((a % 10) + 48);
+				putchar(' ');
+				putchar((b / 10) + 48);
+				putchar((b % 10) + 48);
 
-			if (num1 == 98 && num2 == 99)
-				continue;
-
-			putchar(',');
-			putchar(' ');
+				if (a != 98 || b != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			b++;
 		}
+		a++;
 	}
-
 	putchar('\n');
 
 	return (0);
