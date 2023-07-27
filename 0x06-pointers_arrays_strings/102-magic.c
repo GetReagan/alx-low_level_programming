@@ -1,9 +1,4 @@
 #include <stdio.h>
-#include "Main.h"
-/**
- * Main - Entry point
- * Return: 0
- */
 
 int main(void)
 {
